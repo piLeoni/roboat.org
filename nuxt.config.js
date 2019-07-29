@@ -3,6 +3,9 @@ export default {
   /*
    ** Headers of the page
    */
+  router: {
+    base: '/senseable.mit.edu/wip/danceflood/dist/'
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [
