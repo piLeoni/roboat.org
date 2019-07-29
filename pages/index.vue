@@ -6,7 +6,7 @@
         danceflood
       </h1>
       <h2 class="subtitle">
-        My first-class Nuxt.js project
+        Change test
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
@@ -19,6 +19,11 @@
         >
           GitHub
         </a>
+      </div>
+      <div class="links">
+        <nuxt-link to="/testpage">
+          test
+        </nuxt-link>
       </div>
     </div>
   </div>

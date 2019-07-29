@@ -10,7 +10,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "commit": "git push -u origin master",
+    "update": "ssh leoni@18.7.25.208 '/home/deployer/pull_website.sh /home/deployer/wip/danceflood'"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
