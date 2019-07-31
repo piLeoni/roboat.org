@@ -3,38 +3,46 @@
     <div>
       <logo />
       <h1 class="title">
-        danceflood
+        HOME PAGE
       </h1>
-      <h2 class="subtitle">
-        Change test
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <div class="links">
-        <nuxt-link to="/testpage">
-          test
-        </nuxt-link>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+// import axios from 'axios'
 import Logo from '~/components/Logo.vue'
+import inputContents from '@/static/contents.js'
 
 export default {
   components: {
     Logo
+  },
+  computed: {
+    ...mapState(['contents'])
+  },
+  watch: {
+    contents() {
+      // console.log(this.contents)
+    }
+  },
+  asyncData({ store }) {
+    store.dispatch('loadContents', inputContents)
+  },
+  mounted() {
+    this.loadContents(inputContents)
+  },
+  methods: {
+    loadContents(payload) {
+      this.$store.dispatch('loadContents', payload)
+    },
+    loadContentsPromise(payload) {
+      return new Promise((resolve, reject) => {
+        this.$store.dispatch('loadContents', payload)
+        resolve()
+      })
+    }
   }
 }
 </script>
@@ -42,11 +50,12 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .title {

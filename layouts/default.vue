@@ -1,55 +1,59 @@
 <template>
-  <div>
-    <nuxt />
+  <div class="app-container">
+    <div class="sideBar">
+      <the-sidebar />
+    </div>
+    <div class="mainArea">
+      <nuxt />
+    </div>
   </div>
 </template>
 
+<script>
+import TheSidebar from '@/components/TheSidebar.vue'
+
+export default {
+  components: { TheSidebar }
+}
+</script>
+
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+* {
   box-sizing: border-box;
 }
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+html,
+body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.app-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  /* grid-template-rows: 50% 50%; */
+  height: 100vh;
+  width: 100vw;
+  border: 5px solid red;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
+.sideBar {
+  grid-column-start: 1;
+  margin: 0;
+  /* display: block; */
+  /* position: absolute; */
+  /* width: 20rem; */
+  /* height: 100%; */
+  border: 4px solid blue;
+  overflow: hidden;
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+  /* background: green; */
 }
+.mainArea {
+  grid-column-start: 2;
+  /* grid-column-end: 3; */
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+  border: 4px solid green;
+  /* width: 80%; */
 }
 </style>
