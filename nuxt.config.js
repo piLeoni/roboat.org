@@ -4,7 +4,23 @@ export default {
    ** Headers of the page
    */
   router: {
-    base: '/wip/danceflood/dist/'
+    base: '/wip/danceflood/dist/',
+    mode: 'history',
+
+    prefetchLinks: false
+    // scrollBehavior: (to, from, savedPosition) => {
+    //   if (to.hash) {
+    //     console.log('yes', to.hash)
+
+    //     const element = document.getElementById('mainArea')
+    //     const target = document.querySelector(to.hash)
+    //     element.scrollTo({ top: target.offsetTop, behavior: 'smooth' })
+    //     return { selector: to.hash }
+    //   } else {
+    //     console.log('not', to)
+    //     return { x: 0, y: 0 }
+    //   }
+    // }
   },
   head: {
     title: process.env.npm_package_name || '',
@@ -26,11 +42,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/css/main.css'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/myplugin'],
   /*
    ** Nuxt.js modules
    */

@@ -1,19 +1,21 @@
 export default {
   // label: 'root',
+  // link: 'none',
   nodes: [
-    { label: 'about' },
-    { label: 'content' },
-    { label: 'boat' },
+    { label: 'about', link: '#about' },
+    { label: 'content', link: '#content' },
+    { label: 'boat', link: '#boat' },
     {
       label: 'coreography',
+      link: '#coreography',
       nodes: [
-        { label: 'movements' },
-        { label: 'strategies' },
-        { label: 'light system' },
-        { label: 'control' }
+        { label: 'movements', link: '#movements' },
+        { label: 'strategies', link: '#strategies' },
+        { label: 'light system', link: '#lightsystem' },
+        { label: 'control', link: '#control' }
       ]
     },
-    { label: 'dance' }
+    { label: 'dance', link: '#dance' }
   ]
 }
 

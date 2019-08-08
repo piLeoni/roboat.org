@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500&display=swap');
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+:root {
+  --main-bg-color: rgb(221, 221, 221);
+  --main-fg-color: rgb(0, 166, 240);
+  --main-fg-color-light: rgb(133, 198, 229);
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.menuTitle {
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  color: var(--main-fg-color);
+}
