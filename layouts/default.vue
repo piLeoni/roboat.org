@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="app-container">
+    <div id="app-container">
       <the-header id="page-header" />
       <div id="page-body" ref="pageBody">
         <div class="sidebar-placeholder" :class="{ collapsed: !sidebarOpen }">
@@ -8,7 +8,7 @@
             <the-sidebar v-if="sidebarOpen" class="sidebar" />
           </transition>
         </div>
-        <nuxt />
+        <nuxt id="main-area" />
       </div>
     </div>
   </div>
@@ -22,9 +22,22 @@ import TheSidebar from '@/components/TheSidebar.vue'
 export default {
   components: { TheSidebar, TheHeader },
   computed: {
-    ...mapState(['sidebarOpen'])
+    ...mapState(['isMobile', 'sidebarOpen'])
   },
-  mounted() {}
+  middleware: ['dataLoad'],
+
+  watch: {
+    isMobile() {
+      console.log('is mobile:', this.isMobile)
+    }
+  },
+  mounted() {
+    this.$mobileCheck(this.$store)
+    window.onresize = () => {
+      console.log('resize')
+      this.$mobileCheck(this.$store)
+    }
+  }
 }
 </script>
 
@@ -41,11 +54,11 @@ export default {
   transition: transform 1s;
 }
 
-.app-container {
+#app-container {
   display: grid;
-  grid-template-rows: 5% 95%;
+  grid-template-rows: 2rem auto;
   position: relative;
-  flex-direction: row;
+  /* flex-direction: row; */
   height: 100vh;
   width: 100vw;
   background: var(--main-bg-color);
@@ -53,18 +66,35 @@ export default {
 }
 
 #page-header {
-  height: 3vh;
+  box-sizing: border-box;
   grid-row-start: 1;
   height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  position: relative;
   border-bottom: 2px solid var(--main-fg-color);
-  /* background: green; */
 }
 #page-body {
   display: flex;
+  flex-direction: row;
   position: relative;
   grid-row-start: 2;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+.sidebar-placeholder {
+  position: relative;
+  overflow: visible;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 300px;
+  height: 100%;
+  transition: all 1s;
+  flex: none;
+  z-index: 2;
 }
 .sidebar {
   position: absolute;
@@ -74,42 +104,30 @@ export default {
   grid-row-start: 2;
   transition: all 1s;
 }
-.sidebar-placeholder {
-  position: relative;
-  /* box-sizing: border-box; */
-  overflow: visible;
-  top: 0;
-  left: 0;
-  margin: 0;
-  width: 20%;
-  height: 100%;
-  /* background: blue; */
-  transition: all 1s;
-  /* border-right: 2px solid var(--main-fg-color); */
-}
+
 .collapsed {
   width: 0px !important;
 }
-#mainArea {
-  align-items: initial;
-  overflow: scroll;
-  grid-row-start: 2;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  margin: 0;
+#main-area {
+  flex-basis: shrink;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
 }
 @media only screen and (max-width: 600px) {
-  .page-body {
-    display: block;
+  #page-body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
   .sidebar-placeholder {
     position: absolute;
     width: 100%;
     height: 100%;
   }
-  .mainArea {
-    position: absolute;
+  #main-area {
+    position: relative;
     height: 100%;
     width: 100%;
     overflow-y: visible;

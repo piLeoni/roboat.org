@@ -46,7 +46,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/myplugin'],
+  plugins: ['@/plugins/mobileCheck'],
   /*
    ** Nuxt.js modules
    */

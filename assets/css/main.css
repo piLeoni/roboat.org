@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,400,700&display=swap');
 
 a {
   text-decoration: none;
@@ -8,6 +9,7 @@ a {
   --main-bg-color: rgb(221, 221, 221);
   --main-fg-color: rgb(0, 166, 240);
   --main-fg-color-light: rgb(133, 198, 229);
+  --main-title-font: 'IBM Plex Sans';
 }
 * {
   box-sizing: border-box;
@@ -20,8 +22,96 @@ body {
   height: 100%;
   width: 100%;
 }
-.menuTitle {
-  font-family: roboto, sans-serif;
+/* .menuTitle {
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   color: var(--main-fg-color);
+} */
+
+h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  color: var(--main-fg-color);
+  font-size: 2rem;
+  margin: 0;
 }
+h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 200;
+  color: var(--main-fg-color);
+  font-size: 1.5rem;
+}
+h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 200;
+  color: var(--main-fg-color);
+  font-size: 1.2rem;
+}
+a {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  color: var(--main-fg-color);
+  transition: all 0.2s;
+}
+a:hover {
+  /* background: var(--main-fg-color-light); */
+  text-decoration: underline;
+}
+b {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  color: var(--main-fg-color);
+  font-size: 1rem;
+}
+p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 200;
+  color: var(--main-fg-color);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.tree-menu {
+  border-bottom: 0.5px solid var(--main-fg-color);
+  padding-top: 0.2em;
+  padding-bottom: 0.3em;
+  color: var(--main-fg-color);
+  font-family: var(--main-title-font), sans-serif;
+  transition: background 0.2s;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+.tree-menu:hover:not(.tree-menu-active) {
+  background: var(--main-fg-color-light);
+}
+.tree-menu-active {
+  background: var(--main-fg-color);
+  color: var(--main-bg-color);
+}
+.tree-menu-active a {
+  color: white;
+}
+
+/* .button {
+  background-color: var(--main-fg-color);
+  position: relatve;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  height: 100%;
+  width: 12ch;
+  font-family: var(--main-title-font), sans-serif;
+  transition: background 0.2s;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  transition: all 0.5s;
+  margin: 0;
+}
+
+.button:hover {
+  background: var(--main-fg-color-light);
+} */

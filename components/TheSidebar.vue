@@ -57,9 +57,7 @@ export default {
   background: var(--main-bg-color);
   position: relative;
   width: 100%;
-
   height: 100%;
-  padding: 1em;
   border-right: 2px solid var(--main-fg-color);
 }
 #toggleButton {
@@ -67,5 +65,10 @@ export default {
   top: 5px;
   left: 5px;
   z-index: 2;
+}
+@media only screen and (max-width: 600px) {
+  .sidebarPanel {
+    border: none;
+  }
 }
 </style>

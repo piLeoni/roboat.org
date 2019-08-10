@@ -1,6 +1,9 @@
 <template>
   <div :id="title" :name="title">
     <h1>{{ title }}</h1>
+    <h2>{{ title }}</h2>
+    <h3>{{ title }}</h3>
+    <b>{{ title }}</b>
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque ea
       recusandae aliquid tempora itaque sapiente officia error incidunt atque
