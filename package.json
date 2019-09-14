@@ -1,7 +1,7 @@
 {
-  "name": "danceflood",
+  "name": "roboat.org",
   "version": "1.0.0",
-  "description": "My first-class Nuxt.js project",
+  "description": "Roboat.org website redesign",
   "author": "pileoni",
   "private": true,
   "scripts": {

@@ -3,15 +3,13 @@
     <div
       v-if="label"
       class="tree-menu"
-      :class="{ 'tree-menu-active': label === currentSection }"
+      :class="{ 'tree-menu-active': link === currentSection }"
     >
-      <div>
-        <a :href="`${link}`">
-          <div :style="indent" @click="setSelection(label)">
-            {{ label }}
-          </div>
-        </a>
-      </div>
+      <a :href="`${'#' + link}`">
+        <div :style="indent" @click="setSelection(link)">
+          {{ label }}
+        </div>
+      </a>
     </div>
     <tree-menu
       v-for="node in nodes"
@@ -19,7 +17,7 @@
       :nodes="node.nodes"
       :label="node.label"
       :link="node.link"
-      :depth="depth + 1"
+      :depth="0"
     />
   </div>
 </template>
@@ -41,7 +39,7 @@ export default {
       if (this.isMobile) {
         this.$store.commit('toggleSidebar')
       }
-      // console.log('class', data)
+      console.log('class', data)
       // this.$store.commit('setCurrentSection', data)
     }
   }

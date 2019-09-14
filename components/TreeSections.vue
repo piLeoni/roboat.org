@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="label" :id="label" class="doc-section">
+    <div v-if="label" :id="link" class="doc-section">
       <h1>{{ label }}</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
@@ -12,9 +12,10 @@
 
     <tree-sections
       v-for="node in nodes"
-      :key="node.label"
+      :key="node.linkto"
       :nodes="node.nodes"
       :label="node.label"
+      :link="node.link"
     />
   </div>
 </template>

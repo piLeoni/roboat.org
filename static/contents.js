@@ -2,20 +2,14 @@ export default {
   // label: 'root',
   // link: 'none',
   nodes: [
-    { label: 'about', link: '#about' },
-    { label: 'content', link: '#content' },
-    { label: 'boat', link: '#boat' },
-    {
-      label: 'coreography',
-      link: '#coreography',
-      nodes: [
-        { label: 'movements', link: '#movements' },
-        { label: 'strategies', link: '#strategies' },
-        { label: 'light system', link: '#lightsystem' },
-        { label: 'control', link: '#control' }
-      ]
-    },
-    { label: 'dance', link: '#dance' }
+    { label: 'roboat', link: 'roboat' },
+    { label: 'technical details', link: 'technicaldetails' },
+    { label: 'urban interfaces', link: 'urbaninterfaces' },
+    { label: 'visualizations', link: 'visualizations' },
+    { label: 'research publications', link: 'research-publications' },
+    { label: 'events', link: 'events' },
+    { label: 'roboatinthepress', link: 'roboatinthepress' },
+    { label: 'team', link: 'team' }
   ]
 }
 

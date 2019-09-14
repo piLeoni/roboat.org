@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   router: {
-    base: '/wip/danceflood/dist/',
+    base: '/wip/roboat/dist/',
     mode: 'history',
 
     prefetchLinks: false

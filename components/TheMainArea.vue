@@ -39,7 +39,7 @@ export default {
         )
         for (const el in elements) {
           const distance =
-            elements[el].getBoundingClientRect().bottom - parentTop
+            elements[el].getBoundingClientRect().bottom - parentTop - 30
 
           if (distance >= 0) {
             this.$store.commit(

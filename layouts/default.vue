@@ -87,24 +87,28 @@ export default {
   overflow: hidden;
 }
 .sidebar-placeholder {
+  /* box-sizing: border-box; */
+  /* border: 3px solid greenyellow; */
   position: relative;
   overflow: visible;
+  /* padding-left: 2em; */
   top: 0;
   left: 0;
   margin: 0;
-  width: 300px;
+  width: 250px;
   height: 100%;
   transition: all 1s;
   flex: none;
   z-index: 2;
 }
 .sidebar {
-  position: absolute;
+  position: relative;
   margin: 0;
   width: 100%;
   height: 100%;
   grid-row-start: 2;
   transition: all 1s;
+  /* overflow: hidden; */
 }
 
 .collapsed {

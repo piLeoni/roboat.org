@@ -55,10 +55,16 @@ export default {
 }
 .sidebarPanel {
   background: var(--main-bg-color);
+  /* box-sizing: border-box; */
+  padding-left: 2em;
+  /* border: 2px solid red; */
   position: relative;
   width: 100%;
   height: 100%;
-  border-right: 2px solid var(--main-fg-color);
+  /* border-right: 2px solid var(--main-fg-color); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #toggleButton {
   position: absolute;
