@@ -34,8 +34,10 @@ export default {
   mounted() {
     this.$mobileCheck(this.$store)
     window.onresize = () => {
-      console.log('resize')
-      this.$mobileCheck(this.$store)
+      setTimeout(() => {
+        console.log('resize')
+        this.$mobileCheck(this.$store)
+      }, 1000)
     }
   }
 }

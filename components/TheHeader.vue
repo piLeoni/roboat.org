@@ -73,18 +73,11 @@ export default {
   font-size: 0.85em;
   font-weight: 400;
   text-transform: uppercase;
-
-  /* align-self: flex-end; */
 }
-/* .header-text p {
-  font-weight: 400;
-  font-size: 0.85em;
-} */
-/* .header-text {
-  background-color: var(--main-fg-color);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-} */
+
+@media only screen and (max-width: 600px) {
+  .header-text {
+    font-size: 0.45em;
+  }
+}
 </style>
